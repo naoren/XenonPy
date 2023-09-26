@@ -103,7 +103,7 @@ venv.bak/
 .mypy_cache/
 
 # custom
-# *.csv
+*.csv
 tags
 .idea/
 .vscode/
@@ -112,3 +112,5 @@ pyinstrument
 .pytest_cache/
 /playground/
 .DS_Store
+
+
