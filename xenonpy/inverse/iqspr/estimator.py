@@ -150,6 +150,8 @@ class GaussianLogLikelihood(BaseLogLikelihood):
             self._mdl[c] = mdl
 
     # log_likelihood returns a dataframe of log-likelihood values of each property & sample
+    def check666():
+        print("hehe?")
     def log_likelihood(self, smis, *, log_0=-1000.0, **targets):
         def _avoid_overflow(ll_):
             # log(exp(log(UP) - log(C)) - exp(log(LOW) - log(C))) + log(C)

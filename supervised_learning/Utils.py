@@ -47,7 +47,12 @@ def GPR_model(X_train, y_train, length_scale, noise_level, a, b):
     model= GaussianProcessRegressor(kernel=kernel, n_restarts_optimizer=0, normalize_y=True).fit(X_train, y_train)
     return model
 
+def get_FP(df):
 
+        df['FP'] = df.SMILES.apply(lambda m: AllChem.GetMorganFingerprintAsBitVect(Chem.MolFromSmiles(m), radius=2, nBits=2048))
+        fp = np.array(df['FP'].tolist())
+        
+        return fp
 
 
 # def log_cal(df):
