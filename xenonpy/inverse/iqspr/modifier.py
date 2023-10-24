@@ -218,6 +218,7 @@ class NGram(BaseProposal):
 
     def modify(self, ext_smi):
         # reorder for a given probability
+        
         if np.random.random() < self.reorder_prob:
             ext_smi = self.reorder_esmi(ext_smi)
         # number of deletion (randomly pick from given range)
@@ -461,7 +462,7 @@ class NGram(BaseProposal):
         cand_char = []
         cand_prob = 1
         iB = int(iB)
-        for iO in range(self.sample_order[1] - 1, self.sample_order[0] - 2, -1):
+        for iO in range(self.sample_order[1] - 1, self.sample_order[0] - 2, -1): #default(9,0)
             # if (len(tmp_str) > iO) & (str(tmp_str[-(iO + 1):]) in self._table[iO][iB][iR].index.tolist()):
             if len(tmp_str) > iO and str(
                     tmp_str[-(iO + 1):]) in self._table[iO][iB][iR].index.tolist():

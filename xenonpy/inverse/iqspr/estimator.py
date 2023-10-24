@@ -154,13 +154,10 @@ class GaussianLogLikelihood(BaseLogLikelihood):
         print("hehe?")
     def log_likelihood(self, smis, *, log_0=-1000.0, **targets):
         def _avoid_overflow(ll_):
-            # log(exp(log(UP) - log(C)) - exp(log(LOW) - log(C))) + log(C)
-            # where C = max(log(UP), max(LOW))
             ll_c = np.max(ll_)
             ll_ = np.log(np.exp(ll_[1] - ll_c) - np.exp(ll_[0] - ll_c)) + ll_c
             return ll_
 
-        # self.update_targets(reset=False, **targets):
         for k, v in targets.items():
             if not isinstance(v, tuple) or len(v) != 2 or v[1] <= v[0]:
                 raise ValueError('must be a tuple with (low, up) boundary')
@@ -179,20 +176,12 @@ class GaussianLogLikelihood(BaseLogLikelihood):
         # 3. drop all rows which have NaN value(s)
         pred = self.predict(smis).reset_index(drop=True).dropna(axis='index', how='any')
 
-        # because pred only contains available data
-        # 'pred.index.values' should eq to the previous implementation
         idx = pred.index.values
 
-        # calculate likelihood
         for k, (low, up) in self.targets.items():  # k: target; v: (low, up)
 
-            # predict mean, std for all smiles
             mean, std = pred[k + ': mean'], pred[k + ': std']
-
-            # calculate low likelihood
             low_ll = norm.logcdf(low, loc=np.asarray(mean), scale=np.asarray(std))
-
-            # calculate up likelihood
             up_ll = norm.logcdf(up, loc=np.asarray(mean), scale=np.asarray(std))
 
             # zip low and up likelihood to a 1-dim array then save it.

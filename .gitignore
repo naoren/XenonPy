@@ -104,6 +104,8 @@ venv.bak/
 
 # custom
 *.csv
+*.svg
+*.png
 tags
 .idea/
 .vscode/
