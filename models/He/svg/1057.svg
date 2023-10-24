@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:rdkit="http://www.rdkit.org/xml" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" xml:space="preserve" width="150px" height="150px" viewBox="0 0 150 150">
-<!-- END OF HEADER -->
-<rect style="opacity:1.0;fill:#FFFFFF;stroke:none" width="150.0" height="150.0" x="0.0" y="0.0"> </rect>
-<ellipse cx="108.9" cy="115.9" rx="25.3" ry="25.3" class="atom-1" style="fill:#9999E5;fill-rule:evenodd;stroke:#9999E5;stroke-width:1.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
-<path class="bond-0 atom-0 atom-1" d="M 25.0,25.9 L 108.9,115.9" style="fill:none;fill-rule:evenodd;stroke:#E5E5E5;stroke-width:6.8px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
-<path class="atom-0" d="M 17.1 20.0 L 21.3 15.7 L 15.8 14.6 L 16.6 11.8 L 21.7 14.3 L 21.0 8.8 L 24.0 8.7 L 23.1 14.3 L 28.3 11.9 L 29.2 14.6 L 23.6 15.7 L 27.6 19.9 L 25.1 21.7 L 22.4 16.4 L 19.6 21.7 L 17.1 20.0 " fill="#191919"/>
-</svg>
